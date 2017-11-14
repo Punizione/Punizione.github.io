@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-11-13T11:02:43.452Z</updated>
+  <updated>2017-11-14T13:14:11.670Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,20 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>LeetCode 1</title>
+    <link href="http://yoursite.com/2017/11/14/leetcode1/"/>
+    <id>http://yoursite.com/2017/11/14/leetcode1/</id>
+    <published>2017-11-14T12:53:35.111Z</published>
+    <updated>2017-11-14T13:14:11.670Z</updated>
+    
+    <content type="html"><![CDATA[<p>从这里开始陆陆续续把缓慢刷LeetCode的过程记录上来 (´・ω・`)  <a id="more"></a></p><p><a href="https://leetcode.com/problems/two-sum/description/" target="_blank" rel="external">Two Sum</a></p><h2 id="原题目"><a href="#原题目" class="headerlink" title="原题目"></a>原题目</h2><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.<br>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Example:</span><br><span class="line">Given nums = [2, 7, 11, 15], target = 9,</span><br><span class="line"></span><br><span class="line">Because nums[0] + nums[1] = 2 + 7 = 9,</span><br><span class="line"><span class="built_in">return</span> [0, 1].</span><br></pre></td></tr></table></figure><h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>给定一个整形数组，找到两个数加起来的和等于给定的一个数  </p><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>这是道Easy难度的题，感觉没有必要做得很夸张 _(:3 」∠)_<br>一开始我的思路是直接暴力求解<br>然后差点就TimeLimited了….<br>代码在<a href="https://github.com/Punizione/LeetCode/blob/master/%231.java" target="_blank" rel="external">这里</a><br>后来想想..先排个序然后头指针+尾指针一起向中间走就是了<br>但是运行时间还是有点长，于是考虑另外的方法，<br>想了想能比排序更快的大概用Map可以解决<br>于是改成了HashMap的版本<br>改了后代码在<a href="https://github.com/Punizione/LeetCode/blob/master/%231Better.java" target="_blank" rel="external">这里</a><br>运行结果<br><img src="/css/images/1.png" alt="result"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;从这里开始陆陆续续把缓慢刷LeetCode的过程记录上来 (´・ω・`)
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>假的第一次博客</title>
     <link href="http://yoursite.com/2017/11/13/new-post/"/>
     <id>http://yoursite.com/2017/11/13/new-post/</id>
     <published>2017-11-13T09:35:58.407Z</published>
-    <updated>2017-11-13T11:02:43.452Z</updated>
+    <updated>2017-11-14T13:15:42.569Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="为什么想做这个东西"><a href="#为什么想做这个东西" class="headerlink" title="为什么想做这个东西 "></a>为什么想做这个东西 </h2><p>其实老早就有做博客的想法了，15年底的时候听说腾讯云有个学生优惠云主机的活动，当时就去弄了认证，建了一个临时站点，无奈前端技术不过关，捣腾许久也没能做出自己想要的效果。  </p><p>最早做有博客想法的是 <a href="https://github.com/MyStringIsNotNull" target="_blank" rel="external">剑锋Dalao</a>，在<a href="http://blog.csdn.net/MyStringIsNotNull" target="_blank" rel="external">CSDN</a>上陆陆续续发表了很多自己心得，当时觉得自己也是有一大堆想法和点子想要记录下来，于是就在那台1个月1块钱的主机上记录了两个多月的博文，<del>然后那台云主机就被黑掉了</del>  </p><p>痛苦的地方在于没有保存副本，想来也不是很重要的文章，也就算了，<del>找不回来了我也很绝望啊</del>  </p><p>做这个博客是前阵子想导出TG的贴纸，搜了一下就找到了一位dalao-<a href="https://blog.phoenixlzx.com/" target="_blank" rel="external">Phoenixlzx</a>的<a href="https://blog.phoenixlzx.com/2016/08/23/my-first-yet-useless-telegram-bot/" target="_blank" rel="external">文章</a>和<a href="https://github.com/phoenixlzx/telegram-stickerimage-bot" target="_blank" rel="external">demo</a>  </p><p>大概翻看了一下，<del>竟然是PHP写的，</del>在dalao的指引下又去找到TG官方的文档，然而</p><blockquote><p>搜索了一下现成客户端的源码，都是交给 MTProto 的 API 处理，也没有明确的解析过程。而这些客户端所调用的 messages.getStickerSet 也没有在官方的文档中列出。（吐槽：Telegram 的协议、文档和代码真是糟糕，查阅的时候我的表情一直是 黑人问号.gif</p></blockquote><p><img src="/css/images/006HJgYYgy1fhxrz3v19xg304t04m3yp.gif" alt="你TM在逗我">  </p><p>回到正题，发现dalao的博客用的是Hexo，试着做了一会感觉就是我以前想要做的效果，以前怎么没有发现有这东西(ノ=Д=)ノ┻━┻  </p><p>于是乎就开始更新博客了…<br>内容嘛暂时就聊聊代码，东方，克苏鲁，SCP基金会等等..<br>怕是坑开太多填不了<del>flag</del></p>]]></content>
+    <content type="html"><![CDATA[<p>新的开始啦!\(￣▽￣)/<br><a id="more"></a></p><h2 id="为什么想做这个东西"><a href="#为什么想做这个东西" class="headerlink" title="为什么想做这个东西 "></a>为什么想做这个东西 </h2><p>其实老早就有做博客的想法了，15年底的时候听说腾讯云有个学生优惠云主机的活动，当时就去弄了认证，建了一个临时站点，无奈前端技术不过关，捣腾许久也没能做出自己想要的效果。  </p><p>最早做有博客想法的是 <a href="https://github.com/MyStringIsNotNull" target="_blank" rel="external">剑锋Dalao</a>，在<a href="http://blog.csdn.net/MyStringIsNotNull" target="_blank" rel="external">CSDN</a>上陆陆续续发表了很多自己心得，当时觉得自己也是有一大堆想法和点子想要记录下来，于是就在那台1个月1块钱的主机上记录了两个多月的博文，<del>然后那台云主机就被黑掉了</del>  </p><p>痛苦的地方在于没有保存副本，想来也不是很重要的文章，也就算了，<del>找不回来了我也很绝望啊</del>  </p><p>做这个博客是前阵子想导出TG的贴纸，搜了一下就找到了一位dalao-<a href="https://blog.phoenixlzx.com/" target="_blank" rel="external">Phoenixlzx</a>的<a href="https://blog.phoenixlzx.com/2016/08/23/my-first-yet-useless-telegram-bot/" target="_blank" rel="external">文章</a>和<a href="https://github.com/phoenixlzx/telegram-stickerimage-bot" target="_blank" rel="external">demo</a>  </p><p>大概翻看了一下，<del>竟然是PHP写的，</del>在dalao的指引下又去找到TG官方的文档，然而</p><blockquote><p>搜索了一下现成客户端的源码，都是交给 MTProto 的 API 处理，也没有明确的解析过程。而这些客户端所调用的 messages.getStickerSet 也没有在官方的文档中列出。（吐槽：Telegram 的协议、文档和代码真是糟糕，查阅的时候我的表情一直是 黑人问号.gif</p></blockquote><p><img src="/css/images/006HJgYYgy1fhxrz3v19xg304t04m3yp.gif" alt="你TM在逗我">  </p><p>回到正题，发现dalao的博客用的是Hexo，试着做了一会感觉就是我以前想要做的效果，以前怎么没有发现有这东西(ノ=Д=)ノ┻━┻  </p><p>于是乎就开始更新博客了…<br>内容嘛暂时就聊聊代码，东方，克苏鲁，SCP基金会等等..<br>怕是坑开太多填不了<del>flag</del></p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h2 id=&quot;为什么想做这个东西&quot;&gt;&lt;a href=&quot;#为什么想做这个东西&quot; class=&quot;headerlink&quot; title=&quot;为什么想做这个东西 &quot;&gt;&lt;/a&gt;为什么想做这个东西 &lt;/h2&gt;&lt;p&gt;其实老早就有做博客的想法了，15年底的时候听说腾讯云有个学生优惠云主机的活动，当
-      
+      &lt;p&gt;新的开始啦!\(￣▽￣)/&lt;br&gt;
     
     </summary>
     
