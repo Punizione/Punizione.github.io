@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-12-07T11:56:33.657Z</updated>
+  <updated>2017-12-09T04:31:36.092Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode 59</title>
+    <link href="http://yoursite.com/2017/12/09/LeetCode59/"/>
+    <id>http://yoursite.com/2017/12/09/LeetCode59/</id>
+    <published>2017-12-09T04:15:54.451Z</published>
+    <updated>2017-12-09T04:31:36.092Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://leetcode.com/problems/spiral-matrix-ii/description/" target="_blank" rel="external">Spiral Matrix II</a></p><h2 id="原题目"><a href="#原题目" class="headerlink" title="原题目"></a>原题目</h2><p>Given an integer n, generate a square matrix filled with elements from 1 to n2 in spiral order.</p><p>For example,<br>Given n = 3,</p><p>You should return the following matrix:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line"> [ 1, 2, 3 ],</span><br><span class="line"> [ 8, 9, 4 ],</span><br><span class="line"> [ 7, 6, 5 ]</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p><h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>给定一个整数n，求该边长为n的顺时针螺旋方阵</p><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>一道思绪比动手重要的题，不知道为什么我首先想到是递归 (´・ω・`)</p><p>瞎做了几个钟后未果，遂静下来慢慢想</p><p>这道题应该按着数字增长的角度来做，也就是说一次只要考虑向着一个方向自增就可以</p><p>所以应该有<code>left,right,up,down</code>四个指针，用来标识当前应该赋值的指针走的最大边界，用一个循环来不停地自增</p><p>那循环的停止条件是什么呢？<br>可以是当边界左指针<code>left</code>与边界右指针<code>right</code>相遇的时候，说明赋值已经到达了方阵中心了，当然了也可以是边界上指针<code>up</code>与下指针<code>down</code>相遇的时候，这个不影响</p><p>所以代码应该是这样：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[][] generateMatrix(<span class="keyword">int</span> n) &#123;</span><br><span class="line">    <span class="keyword">int</span>[][] ret = <span class="keyword">new</span> <span class="keyword">int</span>[n][n];</span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>,up = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> right = n -<span class="number">1</span>,down = n - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = left; j &lt;= right; j ++) &#123;</span><br><span class="line">            ret[up][j] = count++;</span><br><span class="line">        &#125;</span><br><span class="line">        up ++;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = up; i &lt;= down; i ++) &#123;</span><br><span class="line">            ret[i][right] = count ++;</span><br><span class="line">        &#125;</span><br><span class="line">        right --;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = right; j &gt;= left; j --) &#123;</span><br><span class="line">            ret[down][j] = count ++;</span><br><span class="line">        &#125;</span><br><span class="line">        down --;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = down; i &gt;= up; i --) &#123;</span><br><span class="line">            ret[i][left] = count ++;</span><br><span class="line">        &#125;</span><br><span class="line">        left ++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>运行结果如下：<br><img src="/css/images/59.png" alt="res"></p><h2 id="变体"><a href="#变体" class="headerlink" title="变体"></a>变体</h2><p>这道题如果有逆时针旋转的变体,只需要把<code>left,right,up,down</code>这四个指针的变换方向换一下就可以了</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/spiral-matrix-ii/description/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Spiral Matrix II&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;原题目
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>关于ZUN在直播中提到的二次创作规约的看法</title>
