@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://delitto.top/"/>
-  <updated>2017-12-12T15:16:37.339Z</updated>
+  <updated>2017-12-14T14:02:18.552Z</updated>
   <id>https://delitto.top/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode 80</title>
+    <link href="https://delitto.top/2017/12/14/Leetcode80/"/>
+    <id>https://delitto.top/2017/12/14/Leetcode80/</id>
+    <published>2017-12-14T02:08:57.129Z</published>
+    <updated>2017-12-14T14:02:18.552Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/description/" target="_blank" rel="external">Remove Duplicates from Sorted Array II</a></p><h2 id="原题目"><a href="#原题目" class="headerlink" title="原题目"></a>原题目</h2><p>Follow up for “Remove Duplicates”:<br>What if duplicates are allowed at most twice?</p><p>For example,<br>Given sorted array nums = [1,1,1,2,2,3],</p><p>Your function should return length = 5, with the first five elements of nums being 1, 1, 2, 2 and 3. It doesn’t matter what you leave beyond the new length.</p><h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>给定一个排好序的整型数组，要求经过调用方法后，原数组中的元素最多出现2次。  </p><p>也就是把原数组里所有多次两次的元素减少到2次，这样的话数组有效长度会变短，此时不考虑原数组比起变短后多出来的那部分的元素  </p><p>比如给了[1,1,1,2,2,3]  </p><p>调用后就应该是[1,1,2,2,3,X]  </p><p>这里X就无关是什么数  </p><p>另外这个方法需要返回调用方法后数组的实际长度，按上面的例子就应该返回5</p><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>乍一看可以用暴力的题我都试着暴力一下</p><p>首先需一个变量<code>length</code>，保存实际长度<br>然后需要一个变量<code>count</code>，记录当前的元素出现过多少次<br>然后再需要一个变量<code>now</code>，记录当前元素<br>再然后需要一个数组<code>res</code>，保存消除掉第三个及以上的重复元素后剩下的其他元素<br>用一个<code>for</code>循环，从第二个元素开始，比较当前元素与<code>now</code>  </p><p>一样的话则<code>count</code>计数器自增，然后判断<code>count</code>是不是仍小于2，若小于2，则说明该元素可以放进<code>res</code>里面，将该元素放进去</p><p>若不一样，则<code>count</code>计数器重置，<code>now</code>重置，将该元素放入<code>res</code></p><p>最终得到的<code>res</code>再使用System.arraypocy全部复制到<code>nums</code>中<br>返回<code>res</code>的索引下标</p><p>代码应该是这样的:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(nums.length&lt;=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length];</span><br><span class="line">    <span class="keyword">int</span> length = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> now = nums[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">int</span> j=<span class="number">1</span>;</span><br><span class="line">    res[<span class="number">0</span>] = nums[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;nums.length;i++)&#123;    </span><br><span class="line">        <span class="keyword">if</span>(now==nums[i])&#123;</span><br><span class="line">            count++;</span><br><span class="line">            <span class="keyword">if</span>(count&lt;=<span class="number">2</span>)&#123;</span><br><span class="line">                res[j++] = nums[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            now = nums[i];</span><br><span class="line">            res[j++] = nums[i];</span><br><span class="line">            count = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">              </span><br><span class="line">    &#125;</span><br><span class="line">    System.arraycopy(res,<span class="number">0</span>,nums,<span class="number">0</span>,res.length-<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> j;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这是一种蠢方法，无论怎么看都觉得很蠢，浪费大把空间在一个O(n)的问题上</p><p>于是考虑更好的方法</p><p>注意到这个原数组是排好序的，如果按题目要求进行替换<br>最终的结果应该满足一个条件:<br><strong>若<code>i&gt;2，nums[i]&gt;nums[i-2]</code></strong><br><strong>若<code>i&lt;=2</code>，则无论如何都不会出现超过两个数是相同的，因为<code>i&lt;2</code>就说明现在数组里只有两个元素</strong></p><p>知道这个规律就好办多了</p><p>只需要用一个变量：<code>index</code>来表示数组下标就可以了<br>思路想好了，代码就容易得多：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> n:nums)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i&lt;<span class="number">2</span>||n&gt;nums[i-<span class="number">2</span>])&#123;</span><br><span class="line">            nums[i++] = n;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>用for-each就能很方便地对数组迭代</p><p>在164个测试用例中<br>平均Runtime 从<code>2ms</code>减少到了<code>1ms</code></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/description/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Remove Duplica
+      
+    
+    </summary>
+    
+      <category term="编程" scheme="https://delitto.top/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
+    
+      <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="https://delitto.top/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>近况</title>
@@ -499,32 +528,6 @@
     <summary type="html">
     
       &lt;p&gt;&lt;strong&gt;这是一道 &lt;del&gt;送命题&lt;/del&gt; 送分题  (´･ω･｀)&lt;/strong&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="编程" scheme="https://delitto.top/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
-    
-      <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="LeetCode" scheme="https://delitto.top/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 1</title>
-    <link href="https://delitto.top/2017/11/14/leetcode1/"/>
-    <id>https://delitto.top/2017/11/14/leetcode1/</id>
-    <published>2017-11-14T12:53:35.111Z</published>
-    <updated>2017-12-11T14:07:26.946Z</updated>
-    
-    <content type="html"><![CDATA[<p>从这里开始陆陆续续把缓慢刷LeetCode的过程记录上来 (´・ω・`)  <a id="more"></a></p><p><a href="https://leetcode.com/problems/two-sum/description/" target="_blank" rel="external">Two Sum</a></p><h2 id="原题目"><a href="#原题目" class="headerlink" title="原题目"></a>原题目</h2><blockquote><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.<br>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Example:</span><br><span class="line">Given nums = [2, 7, 11, 15], target = 9,</span><br><span class="line"></span><br><span class="line">Because nums[0] + nums[1] = 2 + 7 = 9,</span><br><span class="line"><span class="built_in">return</span> [0, 1].</span><br></pre></td></tr></table></figure><h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>给定一个整形数组，找到两个数加起来的和等于给定的一个数  </p><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>这是道Easy难度的题，感觉没有必要做得很夸张 _(:3 」∠)_<br>一开始我的思路是直接暴力求解<br>然后差点就TimeLimited了….<br>代码在<a href="https://github.com/Punizione/LeetCode/blob/master/%231.java" target="_blank" rel="external">这里</a><br>后来想想..先排个序然后头指针+尾指针一起向中间走就是了<br>但是运行时间还是有点长，于是考虑另外的方法，<br>想了想能比排序更快的大概用Map可以解决<br>于是改成了HashMap的版本<br>改了后代码在<a href="https://github.com/Punizione/LeetCode/blob/master/%231Better.java" target="_blank" rel="external">这里</a><br>运行结果<br><img src="http://p0s30qphu.bkt.clouddn.com/17-12-11/30465177.jpg" alt="result"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;从这里开始陆陆续续把缓慢刷LeetCode的过程记录上来 (´・ω・`)
     
     </summary>
     
