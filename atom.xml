@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://delitto.top/"/>
-  <updated>2017-12-27T15:56:29.936Z</updated>
+  <updated>2018-01-01T03:49:57.820Z</updated>
   <id>https://delitto.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>新的一年了</title>
+    <link href="https://delitto.top/2018/01/01/talk10/"/>
+    <id>https://delitto.top/2018/01/01/talk10/</id>
+    <published>2018-01-01T03:30:08.000Z</published>
+    <updated>2018-01-01T03:49:57.820Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="8012年到了"><a href="#8012年到了" class="headerlink" title="8012年到了"></a>8012年到了</h2><p>回顾上一年，各种让自己很憋屈的事一件一件地来，虽然大部分与我没有什么直接联系，但还是不由得觉得很煎熬。  </p><p>7012年，我开始用TG，在TG上认识了很多人，见证了变革的开始，了解了形势越发严峻。<br>用推上一个人的话，大概就是“祝愿各位早日出 <del>墙</del> 人头地”。</p><h2 id="ToDo"><a href="#ToDo" class="headerlink" title="ToDo"></a>ToDo</h2><p>每年都会给自己规定一些事，免得自己太闲，今年也不例外。<br>去年的事倒是都完成了一大半。</p><ul><li>考据东方新作的历史渊源和来历</li><li>绀珠传打通L</li><li>搞多几台机然后建个后台管理</li><li>完善PixivCrawler</li><li>深入学习V协议，希望能自己加以改造</li><li>好好学网络</li><li>少点喝可乐</li><li>去跑步</li><li>多和家里人联系</li><li>去找实习</li><li>刷GPA</li><li>赚钱买机，然后试试挖矿</li><li>有钱的话开始收唱片 <del>这目标定了3年了</del></li><li>学日语 <del>有时间的话</del></li><li>Lua和Scala</li></ul><h2 id="期末要挂了溜了溜了"><a href="#期末要挂了溜了溜了" class="headerlink" title="期末要挂了溜了溜了"></a>期末要挂了溜了溜了</h2><p><img src="http://p0s30qphu.bkt.clouddn.com/18-1-1/89678486.jpg" alt="天子"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;8012年到了&quot;&gt;&lt;a href=&quot;#8012年到了&quot; class=&quot;headerlink&quot; title=&quot;8012年到了&quot;&gt;&lt;/a&gt;8012年到了&lt;/h2&gt;&lt;p&gt;回顾上一年，各种让自己很憋屈的事一件一件地来，虽然大部分与我没有什么直接联系，但还是不由得觉得很煎熬
+      
+    
+    </summary>
+    
+      <category term="闲聊" scheme="https://delitto.top/categories/%E9%97%B2%E8%81%8A/"/>
+    
+    
+      <category term="牢骚" scheme="https://delitto.top/tags/%E7%89%A2%E9%AA%9A/"/>
+    
+  </entry>
   
   <entry>
     <title>总结一下各种坑</title>
@@ -67,11 +92,11 @@
       <category term="编程" scheme="https://delitto.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
+      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
+    
       <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="LeetCode" scheme="https://delitto.top/tags/LeetCode/"/>
-    
-      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
     
   </entry>
   
@@ -150,11 +175,11 @@
       <category term="编程" scheme="https://delitto.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
+      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
+    
       <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="LeetCode" scheme="https://delitto.top/tags/LeetCode/"/>
-    
-      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
     
   </entry>
   
@@ -260,11 +285,11 @@
       <category term="编程" scheme="https://delitto.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
+      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
+    
       <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="LeetCode" scheme="https://delitto.top/tags/LeetCode/"/>
-    
-      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
     
   </entry>
   
@@ -360,11 +385,11 @@
       <category term="编程" scheme="https://delitto.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="Java" scheme="https://delitto.top/tags/Java/"/>
     
       <category term="学习笔记" scheme="https://delitto.top/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -386,11 +411,11 @@
       <category term="编程" scheme="https://delitto.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="Java" scheme="https://delitto.top/tags/Java/"/>
     
       <category term="学习笔记" scheme="https://delitto.top/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -412,11 +437,11 @@
       <category term="编程" scheme="https://delitto.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
+      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
+    
       <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="LeetCode" scheme="https://delitto.top/tags/LeetCode/"/>
-    
-      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
     
   </entry>
   
@@ -442,11 +467,11 @@
       <category term="编程" scheme="https://delitto.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
+      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
+    
       <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="LeetCode" scheme="https://delitto.top/tags/LeetCode/"/>
-    
-      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
     
   </entry>
   
@@ -468,11 +493,11 @@
       <category term="编程" scheme="https://delitto.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="Java" scheme="https://delitto.top/tags/Java/"/>
     
       <category term="学习笔记" scheme="https://delitto.top/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -522,40 +547,11 @@
       <category term="编程" scheme="https://delitto.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="LeetCode" scheme="https://delitto.top/tags/LeetCode/"/>
-    
       <category term="Java" scheme="https://delitto.top/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 617</title>
-    <link href="https://delitto.top/2017/11/22/leetcode617/"/>
-    <id>https://delitto.top/2017/11/22/leetcode617/</id>
-    <published>2017-11-22T12:33:18.989Z</published>
-    <updated>2017-12-14T14:17:37.140Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://leetcode.com/problems/merge-two-binary-trees/description/" target="_blank" rel="external">Merge Two Binary Trees</a></p><h2 id="原题目"><a href="#原题目" class="headerlink" title="原题目"></a>原题目</h2><p>Given two binary trees and imagine that when you put one of them to cover the other, some nodes of the two trees are overlapped while the others are not.</p><p>You need to merge them into a new binary tree. The merge rule is that if two nodes overlap, then sum node values up as the new value of the merged node. Otherwise, the NOT null node will be used as the node of new tree.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Example 1:</span><br><span class="line">Input: </span><br><span class="line">    Tree 1                     Tree 2                  </span><br><span class="line">          1                         2                             </span><br><span class="line">         / \                       / \                            </span><br><span class="line">        3   2                     1   3                        </span><br><span class="line">       /                           \   \                      </span><br><span class="line">      5                             4   7                  </span><br><span class="line">Output: </span><br><span class="line">Merged tree:</span><br><span class="line">         3</span><br><span class="line">        / \</span><br><span class="line">       4   5</span><br><span class="line">      / \   \ </span><br><span class="line">     5   4   7</span><br></pre></td></tr></table></figure></p><p>Note: The merging process must start from the root nodes of both trees.</p><h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>合并两个二叉树为一棵新的二叉树,若两树中有共有节点则将节点值相加.</p><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>二叉树的题我的基本思路都会从递归开始<br>这道题已经给出了树的节点的结构<br>所以看到这道题第一时间我就想到了递归,if判断一下是否为空,不为空就相加<br>代码在<a href="https://github.com/Punizione/LeetCode/blob/master/%23617.java" target="_blank" rel="external">这里</a></p><p>运行结果如下<br><img src="http://p0s30qphu.bkt.clouddn.com/17-12-11/76585387.jpg" alt="01"></p><p>感觉比想象中的慢了一点,想再思考别的解决方案,但始终觉得递归已经是最快的了,如果用BFS或DFS会更慢,那到底是什么原因使得这串代码时间这么长呢?<br><img src="http://p0s30qphu.bkt.clouddn.com/17-12-11/13658034.jpg" alt="二叉懵逼"></p><p>再回去看代码,想想可能是if语句的问题?<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>&#123;</span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>&#123;</span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>&#123;</span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>仔细一想的话还是下面这种的速度会比上面快(在递归栈里面)</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>&#123; <span class="keyword">return</span> ; &#125;</span><br><span class="line"><span class="keyword">if</span>&#123; <span class="keyword">return</span> ; &#125;</span><br><span class="line"><span class="keyword">if</span>&#123; <span class="keyword">return</span> ; &#125;</span><br><span class="line"><span class="keyword">return</span> ;</span><br></pre></td></tr></table></figure><p>实际运行结果如下<br><img src="http://p0s30qphu.bkt.clouddn.com/17-12-11/542108.jpg" alt="02"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/merge-two-binary-trees/description/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Merge Two Binary Trees&lt;/a&gt;&lt;/p&gt;
-      
-    
-    </summary>
-    
-      <category term="编程" scheme="https://delitto.top/categories/%E7%BC%96%E7%A8%8B/"/>
-    
     
       <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="LeetCode" scheme="https://delitto.top/tags/LeetCode/"/>
-    
-      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
     
   </entry>
   
