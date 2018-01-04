@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://delitto.top/"/>
-  <updated>2018-01-01T03:49:57.820Z</updated>
+  <updated>2018-01-04T13:55:22.058Z</updated>
   <id>https://delitto.top/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode540</title>
+    <link href="https://delitto.top/2018/01/04/leetcode540/"/>
+    <id>https://delitto.top/2018/01/04/leetcode540/</id>
+    <published>2018-01-04T13:15:41.000Z</published>
+    <updated>2018-01-04T13:55:22.058Z</updated>
+    
+    <content type="html"><![CDATA[<p>考完试了回来刷刷题<br><del>最近访问LeetCode的ping有点高，可能和GFW有关？</del></p><p><a href="https://leetcode.com/problems/single-element-in-a-sorted-array/description/" target="_blank" rel="external">Single Element in a Sorted Array</a></p><h2 id="原题目"><a href="#原题目" class="headerlink" title="原题目"></a>原题目</h2><p>Given a sorted array consisting of only integers where every element appears twice except for one element which appears once. Find this single element that appears only once.</p><blockquote><p>Example 1:<br>Input: [1,1,2,3,3,4,4,8,8]<br>Output: 2<br>Example 2:<br>Input: [3,3,7,7,10,11,11]<br>Output: 10<br>Note: Your solution should run in O(log n) time and O(1) space.</p></blockquote><h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>给定一个排好序的数组，其中的某个元素外每个元素都是成对出现的，找出那个不是成对出现的元素的下标，要求时间复杂度O(logn)，空间复杂度O(1)。</p><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>时间复杂度O(logn)，空间复杂度O(1)，找到某个元素，这几个题设条件很自然想到二分查找。  </p><p>怎么二分呢？<br>首先想到的是，既然除了某个元素外都是成对存在的，那么在这个孤立的元素出现前，前面的所有元素都应该满足下标关系nums[2<em>m]==nums[2</em>m+1]，以这个关系作为二分的判断条件。思路就很清晰了。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">singleNonDuplicate</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//二分</span></span><br><span class="line">    <span class="keyword">int</span> n = nums.length;</span><br><span class="line">    <span class="keyword">int</span> low = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> high = n/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span>(low &lt; high)&#123;</span><br><span class="line">        <span class="keyword">int</span> m = (low + high)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(nums[<span class="number">2</span>*m] != nums[<span class="number">2</span>*m+<span class="number">1</span>])&#123;</span><br><span class="line">            high = m;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            low = m+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nums[<span class="number">2</span>*low];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>运行结果<br><img src="http://p0s30qphu.bkt.clouddn.com/18-1-4/2325620.jpg" alt="res"><br>目前没有更快的解法..</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;考完试了回来刷刷题&lt;br&gt;&lt;del&gt;最近访问LeetCode的ping有点高，可能和GFW有关？&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/single-element-in-a-sorted-array/des
+      
+    
+    </summary>
+    
+      <category term="编程" scheme="https://delitto.top/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
+    
+      <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="https://delitto.top/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>新的一年了</title>
@@ -92,11 +122,11 @@
       <category term="编程" scheme="https://delitto.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
+      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
+    
       <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="LeetCode" scheme="https://delitto.top/tags/LeetCode/"/>
-    
-      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
     
   </entry>
   
@@ -175,11 +205,11 @@
       <category term="编程" scheme="https://delitto.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
+      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
+    
       <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="LeetCode" scheme="https://delitto.top/tags/LeetCode/"/>
-    
-      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
     
   </entry>
   
@@ -285,11 +315,11 @@
       <category term="编程" scheme="https://delitto.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
+      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
+    
       <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="LeetCode" scheme="https://delitto.top/tags/LeetCode/"/>
-    
-      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
     
   </entry>
   
@@ -311,9 +341,9 @@
       <category term="闲聊" scheme="https://delitto.top/categories/%E9%97%B2%E8%81%8A/"/>
     
     
-      <category term="牢骚" scheme="https://delitto.top/tags/%E7%89%A2%E9%AA%9A/"/>
-    
       <category term="东方" scheme="https://delitto.top/tags/%E4%B8%9C%E6%96%B9/"/>
+    
+      <category term="牢骚" scheme="https://delitto.top/tags/%E7%89%A2%E9%AA%9A/"/>
     
   </entry>
   
@@ -385,11 +415,11 @@
       <category term="编程" scheme="https://delitto.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="Java" scheme="https://delitto.top/tags/Java/"/>
     
       <category term="学习笔记" scheme="https://delitto.top/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -411,11 +441,11 @@
       <category term="编程" scheme="https://delitto.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="Java" scheme="https://delitto.top/tags/Java/"/>
     
       <category term="学习笔记" scheme="https://delitto.top/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -437,11 +467,11 @@
       <category term="编程" scheme="https://delitto.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
+      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
+    
       <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="LeetCode" scheme="https://delitto.top/tags/LeetCode/"/>
-    
-      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
     
   </entry>
   
@@ -467,11 +497,11 @@
       <category term="编程" scheme="https://delitto.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
+      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
+    
       <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="LeetCode" scheme="https://delitto.top/tags/LeetCode/"/>
-    
-      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
     
   </entry>
   
@@ -493,11 +523,11 @@
       <category term="编程" scheme="https://delitto.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="Java" scheme="https://delitto.top/tags/Java/"/>
     
       <category term="学习笔记" scheme="https://delitto.top/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -526,32 +556,6 @@
       <category term="Java" scheme="https://delitto.top/tags/Java/"/>
     
       <category term="学习笔记" scheme="https://delitto.top/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 102 and 107</title>
-    <link href="https://delitto.top/2017/11/23/LeetCode102-and-107/"/>
-    <id>https://delitto.top/2017/11/23/LeetCode102-and-107/</id>
-    <published>2017-11-23T09:50:54.679Z</published>
-    <updated>2017-12-14T14:17:55.712Z</updated>
-    
-    <content type="html"><![CDATA[<p>两道关于树的镜像题 <a id="more"></a><br><a href="https://leetcode.com/problems/binary-tree-level-order-traversal/description/" target="_blank" rel="external">Binary Tree Level Order Traversal</a><br><a href="https://leetcode.com/problems/binary-tree-level-order-traversal-ii/description/" target="_blank" rel="external">Binary Tree Level Order Traversal II</a></p><h2 id="原题目"><a href="#原题目" class="headerlink" title="原题目"></a>原题目</h2><p>Given a binary tree, return the level order traversal of its nodes’ values. (ie, from left to right, level by level).<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">For example:</span><br><span class="line">Given binary tree [3,9,20,null,null,15,7],</span><br><span class="line">    3</span><br><span class="line">   / \</span><br><span class="line">  9  20</span><br><span class="line">    /  \</span><br><span class="line">   15   7</span><br><span class="line"><span class="built_in">return</span> its level order traversal as:</span><br><span class="line">[</span><br><span class="line">  [3],</span><br><span class="line">  [9,20],</span><br><span class="line">  [15,7]</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p><h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>给定一颗二叉树,将其分解到二维数组中<br>102是自顶向下<br>107是自底向上</p><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>一开始我想用递归…但是总觉得不好做,这个怎么看都像一道求树的层次遍历的题<br>于是我便想到了BFS<br>用队列来做的话很简单<br>代码在<a href="https://github.com/Punizione/LeetCode/blob/master/%23102BFS.java" target="_blank" rel="external">这里</a>和<a href="https://github.com/Punizione/LeetCode/blob/master/%23107BFS.java" target="_blank" rel="external">这里</a></p><p>结果就不放出来了<br>意外的是运行时间竟然最快就也就2ms,仅仅beat 50%不到的人<br>而只需要1ms的是用递归的(´・ω・`)<br>但是我已经做不下去了233333<br>就不再进行什么优化了(逃</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;两道关于树的镜像题
-    
-    </summary>
-    
-      <category term="编程" scheme="https://delitto.top/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="LeetCode" scheme="https://delitto.top/tags/LeetCode/"/>
-    
-      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
     
   </entry>
   
