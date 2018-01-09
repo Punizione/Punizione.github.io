@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://delitto.top/"/>
-  <updated>2018-01-08T11:11:06.332Z</updated>
+  <updated>2018-01-09T14:28:40.394Z</updated>
   <id>https://delitto.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一次唯品面经</title>
+    <link href="https://delitto.top/2018/01/09/talk13/"/>
+    <id>https://delitto.top/2018/01/09/talk13/</id>
+    <published>2018-01-09T13:39:42.000Z</published>
+    <updated>2018-01-09T14:28:40.394Z</updated>
+    
+    <content type="html"><![CDATA[<p>还是我，还是面爬虫实习生，还是Java方向。<br>因为走的是内推路线，就两面，整个过程比较随意，面试官很亲和，今天气温比较低，提早半个钟到了却走错了地方，等到十点半HR小姐姐打电话过来梦醒如初，赶紧跑去面试地点。_(:3 」∠)<em><br>不知道为什么面试官对我在简历上写的“弹幕游戏”很感兴趣。\</em>(:3 」∠)_ </p><h2 id="一面"><a href="#一面" class="headerlink" title="一面"></a>一面</h2><p>面试官是爬虫组的老大，问的比较基础，都是爬虫和Linux的问题。<br>Q：平时做爬虫遇到了哪些反爬虫机制？<br>我就把去哪儿网和京东的都说了，一个是数字的字体变换，一个是同IP频繁访问。还提到了使用css对元素进行偏移从而做成的效果。</p><p>Q：平时做爬虫怎么开始的？<br>A：首先是Chrome或者Fiddler抓包，看看是嵌在网页内部的还是ajax请求，网页内部的话获取网页再过滤信息，ajax的话就需要构造请求了。</p><p>Q：抓包请求怎么构造，怎么得到那些隐藏域的参数？<br>A：类似于<code>&lt;input type=&quot;hidden&quot;&gt;</code>这种，分不同时间段访问，观察其值的变化，可能与时间戳或者IP地址等等有关系，一般都可以模拟进入这个网页获取，基本上都会有标签id，因为需要以表单形式做请求。</p><p>Q：linux的相关？MQ？<br>linux因为我接触的不多所以也回答得不好，只说自己会基本的操作，可以部署项目，曾部署过MC的服务端。MQ没听说过就直说不会了。</p><p>可能面试官都比较忙，其余问的也都是些基础的东西，也不问项目..简历也一笔带过了。然后就是二面。</p><h2 id="二面"><a href="#二面" class="headerlink" title="二面"></a>二面</h2><p>面试官是个比较活泼的人，面试也不是以问问题的形式，而像是聊天那种，上来看见我简历上PixivCrawler的项目，就挺感兴趣，先是问Pixiv是不是个框架…然后又看到我用了Tornado，就各种说自己师父的Tornado事迹。全程比较欢乐，现在想来有点想笑2333。  </p><p>然后就是对着简历上写的Django，Flask，SpringMVC各种问…不巧我都没接触多深，很可耻地说了没了解过…</p><p>然后就是Java单例地要用哪两个关键字，刚听到题有点懵，然后才意识到是volatile和synchronized。。</p><p>然后还聊了一些关于Web的事，了解到自己Web方面比较弱势，可能需要恶补一番了_(:3 」∠)_ </p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>可能是实习生又是内推的原因，问得都不算难，又或者是自己太菜，面试官难以深入，不管怎么说，自己还是要趁还没到大四这段时间加速了。。<br>很感谢部落的mori师兄和其他dalao对我的帮助！</p><p><img src="http://p0s30qphu.bkt.clouddn.com/18-1-5/74807261.jpg" alt="1"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;还是我，还是面爬虫实习生，还是Java方向。&lt;br&gt;因为走的是内推路线，就两面，整个过程比较随意，面试官很亲和，今天气温比较低，提早半个钟到了却走错了地方，等到十点半HR小姐姐打电话过来梦醒如初，赶紧跑去面试地点。_(:3 」∠)&lt;em&gt;&lt;br&gt;不知道为什么面试官对我在简历
+      
+    
+    </summary>
+    
+      <category term="闲聊" scheme="https://delitto.top/categories/%E9%97%B2%E8%81%8A/"/>
+    
+    
+      <category term="面试" scheme="https://delitto.top/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="爬虫" scheme="https://delitto.top/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>记录一次面试经历-数沃科技</title>
@@ -95,11 +122,11 @@
       <category term="编程" scheme="https://delitto.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
-    
       <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="LeetCode" scheme="https://delitto.top/tags/LeetCode/"/>
+    
+      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
     
   </entry>
   
@@ -179,11 +206,11 @@
       <category term="编程" scheme="https://delitto.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
-    
       <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="LeetCode" scheme="https://delitto.top/tags/LeetCode/"/>
+    
+      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
     
   </entry>
   
@@ -262,11 +289,11 @@
       <category term="编程" scheme="https://delitto.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
-    
       <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="LeetCode" scheme="https://delitto.top/tags/LeetCode/"/>
+    
+      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
     
   </entry>
   
@@ -372,11 +399,11 @@
       <category term="编程" scheme="https://delitto.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
-    
       <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="LeetCode" scheme="https://delitto.top/tags/LeetCode/"/>
+    
+      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
     
   </entry>
   
@@ -472,11 +499,11 @@
       <category term="编程" scheme="https://delitto.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
+      <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
+    
       <category term="Java" scheme="https://delitto.top/tags/Java/"/>
     
       <category term="学习笔记" scheme="https://delitto.top/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -498,11 +525,11 @@
       <category term="编程" scheme="https://delitto.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
+      <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
+    
       <category term="Java" scheme="https://delitto.top/tags/Java/"/>
     
       <category term="学习笔记" scheme="https://delitto.top/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -524,41 +551,11 @@
       <category term="编程" scheme="https://delitto.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
-    
       <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="LeetCode" scheme="https://delitto.top/tags/LeetCode/"/>
     
-  </entry>
-  
-  <entry>
-    <title>LeetCode 24</title>
-    <link href="https://delitto.top/2017/11/28/leetcode24/"/>
-    <id>https://delitto.top/2017/11/28/leetcode24/</id>
-    <published>2017-11-28T11:10:51.459Z</published>
-    <updated>2017-12-14T14:18:57.664Z</updated>
-    
-    <content type="html"><![CDATA[<p>一道链表置换的题</p><p><a href="https://leetcode.com/problems/swap-nodes-in-pairs/description/" target="_blank" rel="external">Swap Nodes in Pairs</a></p><h2 id="原题目"><a href="#原题目" class="headerlink" title="原题目"></a>原题目</h2><p>Given a linked list, swap every two adjacent nodes and return its head.</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">For example,</span><br><span class="line">Given 1-&gt;2-&gt;3-&gt;4, you should <span class="built_in">return</span> the list as 2-&gt;1-&gt;4-&gt;3.</span><br></pre></td></tr></table></figure><p>Your algorithm should use only constant space. You may not modify the values in the list, only nodes itself can be changed.</p><h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>给定一个链表,返回两两置换后的链表,必须置换节点,不能置换节点的值。</p><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>记得去年上数据结构我们老师就给我们讲过这样的题(´・ω・`)</p><p>首先在链表头增加一个首部 <code>dummy</code>,用来指定链表的第一个节点  </p><p>用一个节点引用 <code>now</code> 表明现在指针在的位置  </p><p>然后一个while循环判断<code>now</code>  </p><p>接下来两个节点是否为空,不为空的话就置换这两个节点,然后 <code>now</code> 指针往后移两个单位<br>否则就退出循环了</p><p>代码如下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">swapPairs</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">    ListNode dummy = <span class="keyword">new</span> ListNode(-<span class="number">1</span>);</span><br><span class="line">    dummy.next = head;</span><br><span class="line">    ListNode now = dummy;</span><br><span class="line">    <span class="keyword">while</span> (now.next!=<span class="keyword">null</span> &amp;&amp; now.next.next!=<span class="keyword">null</span>) &#123;</span><br><span class="line">        ListNode first = now.next;</span><br><span class="line">        ListNode second = now.next.next;</span><br><span class="line">        first.next = second.next;</span><br><span class="line">        now.next = second;</span><br><span class="line">        now.next.next = first;</span><br><span class="line">        now = now.next.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dummy.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>在翻看他人的答案的时候看到了一种使用递归的解法  </p><p>思路是将<code>swapPairs()</code>方法作为只处理两个节点的置换的方法  </p><p>1-&gt;2-&gt;3</p><p>2-&gt;1-&gt;3<br>这样的话使用该方法置换两个节点后,<code>节点1</code>的<code>next</code>就可以指定为<code>swapPairs(3)</code>  </p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">swapPairs</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(head==<span class="keyword">null</span> || head.next==<span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">    ListNode second = head.next;</span><br><span class="line">    ListNode third = second.next;</span><br><span class="line"></span><br><span class="line">    second.next = head;</span><br><span class="line">    head.next = swapPairs(third);</span><br><span class="line">    <span class="keyword">return</span> second;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>思路很巧妙,不失为一种可行的方式,在40多个测试用例中,平均时间和使用循环差不多</p><p>或许在一定场景下能比循环的很快吧(笑</p><p>代码我放在Github上了,需要自取~</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;一道链表置换的题&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/swap-nodes-in-pairs/description/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Swap Nodes in Pai
-      
-    
-    </summary>
-    
-      <category term="编程" scheme="https://delitto.top/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    
       <category term="Java" scheme="https://delitto.top/tags/Java/"/>
-    
-      <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="LeetCode" scheme="https://delitto.top/tags/LeetCode/"/>
     
   </entry>
   
