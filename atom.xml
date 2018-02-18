@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://delitto.top/"/>
-  <updated>2018-01-09T14:28:40.394Z</updated>
+  <updated>2018-02-18T03:33:41.974Z</updated>
   <id>https://delitto.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>V2搭建小计</title>
+    <link href="https://delitto.top/2018/02/16/talk14/"/>
+    <id>https://delitto.top/2018/02/16/talk14/</id>
+    <published>2018-02-16T14:10:47.000Z</published>
+    <updated>2018-02-18T03:33:41.974Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="好久没写博客，先记他一波笔记先"><a href="#好久没写博客，先记他一波笔记先" class="headerlink" title="好久没写博客，先记他一波笔记先"></a>好久没写博客，先记他一波笔记先</h2><h2 id="安装V2"><a href="#安装V2" class="headerlink" title="安装V2"></a>安装V2</h2><p>最近因为一些原因大出血，所以趁着过年回一波血。搞完机顺便搭多几个以应对寒冬。<br>从零记录一遍<br>配置：CentOS7，512 MB，1 CPU，10 GB硬盘，最便宜的配置，虽然延迟不算低，但是带宽挺不错，适合用来看视频，所以正好利用V2的WebSocket+TLS+Web。</p><p>注意:需要有域名！不然不能用证书！</p><p>拿到机子后，先修改SSH为智能密钥登录，第一次登陆基本上可以看到很多词登录失败…因为默认22端口root用户容易被爆破。</p><p>弄完机子本身的问题，开始安装V2<br>下载官方提供的一脚本：<br><code>wget https://toutyrater.github.io/install-release.sh</code><br><img src="http://p0s30qphu.bkt.clouddn.com/18-2-18/54287846.jpg" alt="1"><br>执行安装：<br><code>bash install-release.sh</code><br>因为自己用的是root用户所以不用sudo，后面也是一样<br>提示装unzip失败了<br><img src="http://p0s30qphu.bkt.clouddn.com/18-2-18/63369358.jpg" alt="2"><br>手动装<code>yum -y install unzip</code><br><img src="http://p0s30qphu.bkt.clouddn.com/18-2-18/27708709.jpg" alt="3"><br>装完再来一遍<br><img src="http://p0s30qphu.bkt.clouddn.com/18-2-18/51419812.jpg" alt="4"><br>提示完成，首次安装完成时，V2不会自己启动，需要运行<code>systemctl start v2ray</code><br>不过这里先去配置，配完再启动。</p><h2 id="配置V2"><a href="#配置V2" class="headerlink" title="配置V2"></a>配置V2</h2><blockquote><p>/usr/bin/v2ray/v2ray：V2Ray 程序；<br>/usr/bin/v2ray/v2ctl：V2Ray 工具；<br>/etc/v2ray/config.json：配置文件；<br>/usr/bin/v2ray/geoip.dat：IP 数据文件<br>/usr/bin/v2ray/geosite.dat：域名数据文件</p></blockquote><p>根据官方文档，去<code>/etc/v2ray/</code>下配置<br><img src="http://p0s30qphu.bkt.clouddn.com/18-2-18/3402322.jpg" alt="5"><br>主要看红线部分</p><ul><li><code>port</code>是<code>nginx</code>反代的端口</li><li><code>id</code>和<code>alterId</code>是用户信息，使用<a href="">在线UUID生成</a>可以生成</li><li><code>streamSettings</code>中<code>network</code>设为<code>ws</code>，即<code>WebSocket</code>，<code>path</code>是以域名为准的相对位置，我这里设成<code>ray</code>，V2会监听来到这里的请求并响应，假设域名是<code>abc.com</code>，那么直接访问<code>abc.com</code>将会是<code>nginx</code>的页面，访问<code>abc.com/ray</code>将会是<code>502 Bad Request</code>，用V2连的话才能连通。</li></ul><p>配了这些，V2服务端就好了。</p><h2 id="证书配置"><a href="#证书配置" class="headerlink" title="证书配置"></a>证书配置</h2><p>证书由<code>nginx</code>来管，这里就不关V2的事了。</p><p>用acme.sh脚本自动申请，下载生成证书<br><code>curl  https://get.acme.sh | sh</code><br><img src="http://p0s30qphu.bkt.clouddn.com/18-2-18/44930737.jpg" alt="6"><br>装完后用命令<code>source ~/.bashrc</code>确保脚本所设置的命令别名生效。<br>顺便看到红色字体提示装个<code>socat</code>，这是个用来转发端口的，不装后面启动不了<br><code>yum install socat</code><br><img src="http://p0s30qphu.bkt.clouddn.com/18-2-18/11054554.jpg" alt="7"></p><p>之后便是启动脚本让其申请证书<code>~/.acme.sh/acme.sh --issue -d 你的域名 --standalone -k ec-256</code>，首先要确认80端口不被占用。<br><img src="http://p0s30qphu.bkt.clouddn.com/18-2-18/29124536.jpg" alt="8"><br>可以看到申请成功，证书被放到了<code>/root/.acme.sh/</code>下</p><p>把证书装到V2中<code>~/.acme.sh/acme.sh --installcert -d 你的域名--fullchainpath /etc/v2ray/v2ray.crt --keypath /etc/v2ray/v2ray.key --ecc</code><br><img src="http://p0s30qphu.bkt.clouddn.com/18-2-18/4721103.jpg" alt="10"><br>装完，<code>/etc/v2ray</code>就出现了.key和.crt文件，去<code>nginx</code>中配置<br><img src="http://p0s30qphu.bkt.clouddn.com/18-2-18/54539974.jpg" alt="9"><br>主要看红色位置 域名要填对，<code>proxy_pass</code>对应V2中的端口，<code>location</code>对应V2中的<code>path</code></p><p>如果是低版本的<code>nginx</code>，<code>location</code>中的相对位置后需要加<code>\</code>，例如<code>\ray\</code>，配置完后，重启<code>nginx</code>和<code>V2</code><br><img src="http://p0s30qphu.bkt.clouddn.com/18-2-18/37092340.jpg" alt="11"></p><p>客户端配置好相应位置，这里用的地址便是你的域名了，端口是443，传输层协议是ws，<code>path</code>和服务端配置的保持一致</p><h2 id="配完测试"><a href="#配完测试" class="headerlink" title="配完测试"></a>配完测试</h2><p>客户端连接，如果能访问便是配置好了，服务端日志如下<br><img src="http://p0s30qphu.bkt.clouddn.com/18-2-18/73178741.jpg" alt="12"></p><p>这样，带https的WebSocket层的V2就配置完了，如果有必要，还可以在域名根目录配置相应的静态网页，起到伪装效果。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;好久没写博客，先记他一波笔记先&quot;&gt;&lt;a href=&quot;#好久没写博客，先记他一波笔记先&quot; class=&quot;headerlink&quot; title=&quot;好久没写博客，先记他一波笔记先&quot;&gt;&lt;/a&gt;好久没写博客，先记他一波笔记先&lt;/h2&gt;&lt;h2 id=&quot;安装V2&quot;&gt;&lt;a href
+      
+    
+    </summary>
+    
+      <category term="闲聊" scheme="https://delitto.top/categories/%E9%97%B2%E8%81%8A/"/>
+    
+    
+      <category term="搞事" scheme="https://delitto.top/tags/%E6%90%9E%E4%BA%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>一次唯品面经</title>
@@ -530,32 +555,6 @@
       <category term="Java" scheme="https://delitto.top/tags/Java/"/>
     
       <category term="学习笔记" scheme="https://delitto.top/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 33</title>
-    <link href="https://delitto.top/2017/11/30/leetcode33/"/>
-    <id>https://delitto.top/2017/11/30/leetcode33/</id>
-    <published>2017-11-30T02:13:19.346Z</published>
-    <updated>2017-12-14T14:19:15.386Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天的Leetcode突然抽风,直接访问会跳出Google的机器验证<br>搭梯子的话直接不用验证就进去了…<a id="more"></a></p><p><a href="https://leetcode.com/problems/search-in-rotated-sorted-array/description/" target="_blank" rel="external">Search in Rotated Sorted Array</a></p><h2 id="原题目"><a href="#原题目" class="headerlink" title="原题目"></a>原题目</h2><p>Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.</p><p>(i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).</p><p>You are given a target value to search. If found in the array return its index, otherwise return -1.</p><p>You may assume no duplicate exists in the array.</p><h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>给定一个升序排序好的数组,但是其在某个位置进行了前后置换  </p><p>比如原先是<code>int[]{0,1,2,4,5,6,7}</code>  </p><p>置换后成了<code>int[]{4,5,6,7,0,1,2}</code></p><p>现在要求在这个数组里查找一个数</p><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>第一反应应该还是二分查找,毕竟是最快的  </p><p>但是这个位置置换了的点有点难以确认,如果对数组进行重排序的话就失去了二分查找的性能优势 </p><p>思考过后,觉得可以这样:</p><p>首先还是二分:<br>令另<code>low = 0, high = array.length</code>,接下来,原本应该判断<code>array[(low+high)/2]</code>与所给的需要查找的数<code>target</code>的大小关系  </p><p>但这里就额外多一个步骤,令一个临时变量<code>num</code>来保存<code>array[(low+high)/2]</code>  </p><p>首先判断<code>num</code>与<code>target</code>是否都在一个升序序列里  </p><p>因为置换后的数组大概可以看成这样:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">   /</span><br><span class="line">  /</span><br><span class="line"> /    </span><br><span class="line">/</span><br><span class="line">      /</span><br><span class="line">     /</span><br><span class="line">    /</span><br></pre></td></tr></table></figure><p>如果在一个升序序列里的话,说明<code>num</code>的值可以用来与<code>target</code>比较从而进行二分</p><p>如果不在呢?</p><p>不在的话就分成了两种情况:</p><ul><li><code>num</code>在值较小的序列里,<code>target</code>在值较大的序列里</li><li><code>num</code>在值较大的序列里,<code>target</code>在值较小的序列里</li></ul><p>先考虑第一种情况<br><code>num</code>在值较小的序列里,<code>target</code>在值较大的序列里<br>这说明<code>num</code>的值比<code>target</code>小,那么<code>num</code>作为<code>array[(low+high)/2]</code>应该往值较大的那个序列搜,也就是<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">high = mid;</span><br><span class="line">mid = (low+high)/<span class="number">2</span>;</span><br><span class="line">num = array[mid]</span><br></pre></td></tr></table></figure></p><p>第二种情况也同理</p><p>所以总体的代码如下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> lo = <span class="number">0</span>,hi = nums.length;</span><br><span class="line"><span class="keyword">while</span>(lo&lt;hi)&#123;</span><br><span class="line">    <span class="keyword">int</span> mid = (lo+hi)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">int</span> num = (nums[mid]&lt;nums[<span class="number">0</span>])==(target&lt;nums[<span class="number">0</span>])?nums[mid]:</span><br><span class="line">                                                    (target&lt;nums[<span class="number">0</span>]?Integer.MIN_VALUE:</span><br><span class="line">                                                       Integer.MAX_VALUE);</span><br><span class="line">    <span class="keyword">if</span>(num &lt;target)&#123;</span><br><span class="line">        lo = mid+<span class="number">1</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(num&gt;target)&#123;</span><br><span class="line">        hi = mid;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> mid;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> -<span class="number">1</span>;</span><br></pre></td></tr></table></figure></p><p>可想而知的Accepted了…</p><p>令我大跌眼镜的是<br><em>最快的方法竟然是一个循环从头到尾判断！！！</em></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今天的Leetcode突然抽风,直接访问会跳出Google的机器验证&lt;br&gt;搭梯子的话直接不用验证就进去了…
-    
-    </summary>
-    
-      <category term="编程" scheme="https://delitto.top/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="LeetCode" scheme="https://delitto.top/tags/LeetCode/"/>
-    
-      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
     
   </entry>
   
