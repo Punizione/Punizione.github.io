@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://delitto.top/"/>
-  <updated>2018-07-01T15:24:30.659Z</updated>
+  <updated>2018-07-01T15:52:25.701Z</updated>
   <id>https://delitto.top/</id>
   
   <author>
@@ -15,20 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>talk16</title>
-    <link href="https://delitto.top/2018/07/01/talk16/"/>
-    <id>https://delitto.top/2018/07/01/talk16/</id>
-    <published>2018-07-01T15:24:30.000Z</published>
-    <updated>2018-07-01T15:24:30.659Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>咸鱼のLuaSTG开发进度</title>
@@ -542,6 +528,32 @@
     
       <category term="编程" scheme="https://delitto.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
+    
+      <category term="Java" scheme="https://delitto.top/tags/Java/"/>
+    
+      <category term="学习笔记" scheme="https://delitto.top/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>编程杂谈(4)---三路快速排序</title>
+    <link href="https://delitto.top/2017/12/02/talk4/"/>
+    <id>https://delitto.top/2017/12/02/talk4/</id>
+    <published>2017-12-02T10:34:21.122Z</published>
+    <updated>2017-12-14T14:19:51.656Z</updated>
+    
+    <content type="html"><![CDATA[<p>上次说到快排的优化,同时对快排的几种可能会造成排序效率变慢的情况进行了优化,但仍然存在一个问题。  <a id="more"></a></p><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>当待排序数组里存在多个相同的值时,使用普通的快速排序仍然效率很慢,因为左右指针都有可能停在和基准值相同的值上,这种问题在数组里面存在多个相同值时更为突出  </p><p>而使用随机选取的方式也不一定能够规避这个问题,因为当相同的值越来越多时,随机选取选择到该值的机率很增大,变相降低了排序效率</p><p>考虑一种方式:<br>能不能使用第三个指针<code>cur</code>,令于基准值相同的值分布到汇集到基准值位置  </p><p>这样的话就相当于在进行快排的同时对对大量相同的数据排序了</p><p><img src="http://p0s30qphu.bkt.clouddn.com/17-12-11/32202558.jpg" alt="example"></p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>修改原有的<code>partition(int[], int, int)</code>方法,增加一个变量<code>cur</code>记录相同的基准值<br>修改返回值为<code>int[]</code>,表示相同的基准值开始和结束的位置</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span>[] partition(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> left, <span class="keyword">int</span> right)&#123;</span><br><span class="line">    <span class="keyword">int</span> temp = arr[left];</span><br><span class="line">    <span class="keyword">int</span> i = left;</span><br><span class="line">    <span class="keyword">int</span> j = right;</span><br><span class="line">    <span class="keyword">int</span> cur = i;</span><br><span class="line">    <span class="keyword">while</span>(cur&lt;=j)&#123;</span><br><span class="line">        <span class="keyword">if</span> (arr[cur]&gt;temp) &#123;</span><br><span class="line">            cur++;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (arr[cur]&lt;temp) &#123;</span><br><span class="line">            swap(arr, cur++, i++);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            swap(arr, cur, j--);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;i - <span class="number">1</span>, j + <span class="number">1</span>&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>在调用的时候就这样<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] ret = partition(arr, left, right);</span><br><span class="line">qSort(arr, left, ret[<span class="number">0</span>]);</span><br><span class="line">qSort(arr, ret[<span class="number">1</span>], right);</span><br></pre></td></tr></table></figure></p><p>至此,三路优化的快速排序完成</p><p><img src="http://p0s30qphu.bkt.clouddn.com/17-12-11/28678657.jpg" alt="pic"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;上次说到快排的优化,同时对快排的几种可能会造成排序效率变慢的情况进行了优化,但仍然存在一个问题。
+    
+    </summary>
+    
+      <category term="编程" scheme="https://delitto.top/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="算法" scheme="https://delitto.top/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="Java" scheme="https://delitto.top/tags/Java/"/>
     
